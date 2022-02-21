@@ -1,6 +1,29 @@
+<form method="post">  
+        Enter a Character: <input type="text" name="input"><br><br>  
+        <input type="submit" name="submit" value="Submit">  
+        </form>  
+
 <?php      
-    $ch = 'JJ';  
-    switch ($ch)  
+    # $ch = 'JJ';
+    if($_POST){
+    $input=$_POST['input'];
+    $a = array ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
+    foreach($a as $key){
+    if($input==$key){
+    # $value=TRUE;
+    echo("It's a Vowel <br>" . $key);
+    }
+    else {  
+        echo 'The Vowel is  <br>'. $input;  
+        }   
+}
+    }
+    /*if (isset($value) && $key) {  
+        echo 'This is not a Vowel <br>'. $input;  
+    } 
+    */
+    /*
+    switch ($input)  
     {     
         case 'a':   
             echo "Given character is vowel";  
@@ -35,5 +58,6 @@
         default:   
             echo "Given character is consonant";  
             break;  
-    }  
+    } 
+} */
 ?>    
